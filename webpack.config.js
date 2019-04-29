@@ -1,13 +1,14 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const webpack = require('webpack');
 
 module.exports = {
   entry: './src/bundle.js',
 
   module: {
     rules: [
+      {
+        test: /\.(png|jpe?g|gif)$/,
+        use: ["file-loader"],
+      },
       {
         test: /\.html$/,
         use: [
@@ -27,7 +28,7 @@ module.exports = {
           "sass-loader" // compiles Sass to CSS, using Node Sass by default
         ]
       }
-    ]
+    ],
   },
   output: {
     filename: 'bundle.js',

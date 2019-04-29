@@ -1,4 +1,4 @@
-import './index.html';
 import './style/style.scss';
+import './index.html';
+import './js/main';
 
-console.log('works');
